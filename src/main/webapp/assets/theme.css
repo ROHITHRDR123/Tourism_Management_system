@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* =====================================================================
+   DCL TOURS — Shared Theme
+   Used by every page (login, dashboard, booking, payment, bill, etc.)
+   so the whole site looks like one product instead of a patchwork.
+===================================================================== */
+
+:root{
+    --gold:#c9a24b;
+    --gold-bright:#e6c874;
+    --ink:#0a0d10;
+    --panel:#11151a;
+    --panel-2:#161b21;
+    --line:rgba(255,255,255,.08);
+    --muted:#93a0ab;
+    --text:#eef1f3;
+    --success:#8fe3b5;
+    --success-bg:#12261d;
+    --error:#f2a5a5;
+    --error-bg:#2a1414;
+}
+
+*{ box-sizing:border-box; }
+
+body.theme{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Manrope', sans-serif;
+    margin:0;
+}
+
+.theme h1, .theme h2, .theme h3, .theme .display{
+    font-family:'Playfair Display', serif;
+}
+
+.theme ::selection{ background:var(--gold); color:#0a0d10; }
+
+/* ---------- Top bar (simple, non-hero pages) ---------- */
+.topnav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 6%;
+    background:rgba(10,13,16,.9);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+.topnav .logo{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    font-weight:700;
+    color:#fff;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.topnav .logo span{ color:var(--gold); }
+.topnav .links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+.topnav .links a{
+    color:#dfe4e8;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+}
+.topnav .links a:hover{ color:var(--gold-bright); }
+.topnav .links a.pill{
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    padding:8px 20px;
+    border-radius:2px;
+}
+.topnav .links a.pill:hover{ background:var(--gold); color:var(--ink); }
+
+/* ---------- Buttons ---------- */
+.btn-gold{
+    background:var(--gold);
+    color:#100c02;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:.02em;
+    padding:15px 30px;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    text-align:center;
+    transition:.3s;
+}
+.btn-gold:hover{ background:var(--gold-bright); transform:translateY(-1px); }
+.btn-gold:active{ transform:translateY(0); }
+
+.btn-outline{
+    background:transparent;
+    color:var(--gold-bright);
+    border:1px solid var(--gold);
+    font-weight:600;
+    font-size:14px;
+    padding:13px 28px;
+    border-radius:2px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    text-align:center;
+    transition:.3s;
+}
+.btn-outline:hover{ background:var(--gold); color:var(--ink); }
+
+/* ---------- Cards / panels ---------- */
+.panel-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+}
+
+/* ---------- Form inputs ---------- */
+.theme label{
+    display:block;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    font-weight:600;
+}
+.theme input[type="text"],
+.theme input[type="email"],
+.theme input[type="password"],
+.theme input[type="tel"],
+.theme input[type="date"],
+.theme select,
+.theme textarea{
+    width:100%;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    color:#fff;
+    padding:14px 16px;
+    border-radius:4px;
+    font-size:14.5px;
+    font-family:'Manrope', sans-serif;
+    transition:.25s;
+}
+.theme input:focus, .theme select:focus, .theme textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+    background:#1b2129;
+}
+.theme input::placeholder{ color:#5c6772; }
+
+/* ---------- Banners ---------- */
+.banner{
+    max-width:760px;
+    margin:0 auto 24px;
+    padding:15px 22px;
+    border-radius:6px;
+    font-weight:600;
+    text-align:center;
+    font-size:14.5px;
+    border:1px solid;
+}
+.banner-success{ background:var(--success-bg); color:var(--success); border-color:rgba(143,227,181,.3); }
+.banner-error{ background:var(--error-bg); color:var(--error); border-color:rgba(242,165,165,.3); }
+
+/* ---------- Page shell used by non-hero pages ---------- */
+.theme-shell{
+    min-height:100vh;
+    padding:60px 6% 100px;
+    max-width:1100px;
+    margin:0 auto;
+}
